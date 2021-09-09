@@ -6,7 +6,9 @@ const authController = Express.Router()
 const authService = new AuthService()
 
 authController.get('/signin', (req, res) => {
-    // 로그인 로직은 안넣음(그냥 JWT 발급만 넣음)
+    const { id, pw } = req.body
+
+    // TODO
     res.send(new ResponseDto(authService.generateToken(), 200, 'logined'))
 })
 
